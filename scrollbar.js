@@ -39,7 +39,6 @@
         "_client": 0,
         "_startX": 0,
         "_startY": 0,
-        "_startOffset": 0,
     }, prop, prototype = {
         "init": function (props) {
             var prop, isDom;
@@ -132,7 +131,6 @@
                 ev = ev || window.Event;
                 this._startX = ev.x || ev.pageX;
                 this._startY = ev.y || ev.pageY;
-                this._startOffset = this.scrollbarInner.style.left;
                 this.scrollbarInner["onmousemove"] = mouseMoveCallback;
                 this.scrollbarInner["onmouseup"] = mouseMoveEndCallback;
             }).bind(this);
