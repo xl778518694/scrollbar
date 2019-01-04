@@ -200,6 +200,7 @@
             this._scroll = this.getDocumentMainLength();
             this._client = this.getClient();
             if (this._client >= this._scroll) this.scrollbar.style.display = "none";
+            else this.scrollbar.style.display = "block";
             this.innerminAxisPercent = (this._client / this._scroll * 100) + "%";
             if ("y" === this.direction) this.scrollbarInner.style.height = this.innerminAxisPercent;
             else this.scrollbarInner.style.width = this.innerminAxisPercent;
