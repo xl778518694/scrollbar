@@ -123,16 +123,17 @@
                 this._startY = y;
             }).bind(this);
             var mouseMoveEndCallback = (function () {
-                this.scrollbarInner["onmousemove"] = null;
-                this.scrollbarInner["onmouseup"] = null;
+                this.target["onmousemove"] = null;
+                this.target["onmouseup"] = null;
             }).bind(this);
 
             this.scrollbarInner["onmousedown"] = (function (ev) {
                 ev = ev || window.Event;
                 this._startX = ev.x || ev.pageX;
                 this._startY = ev.y || ev.pageY;
-                this.scrollbarInner["onmousemove"] = mouseMoveCallback;
-                this.scrollbarInner["onmouseup"] = mouseMoveEndCallback;
+                this.target["onmousemove"] = mouseMoveCallback;
+                this.target["onmouseup"] = mouseMoveEndCallback;
+                return false;
             }).bind(this);
 
             this.scrollbarInner["onmouseout"] = mouseMoveEndCallback;
